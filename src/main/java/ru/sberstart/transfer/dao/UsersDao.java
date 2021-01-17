@@ -10,11 +10,11 @@ import java.util.List;
 
 @Service
 public class UsersDao implements CrudDao<User, Long>{
-    private String SQL_CREATE = "INSERT INTO users (name, middlename, surename) VALUES (?, ?, ?)";
-    private String SQL_READ = "SELECT * FROM users where id = ?";
-    private String SQL_UPDATE = "UPDATE users SET name = ?, middlename = ?, surename = ? where id = ?";
-    private String SQL_DELETE = "DELETE FROM users WHERE id = ?";
-    private String SQL_FIND_ALL = "select * from users";
+    private String SQL_CREATE = "INSERT INTO users (name, middlename, surname) VALUES (?, ?, ?)";
+    private String SQL_READ = "SELECT * FROM users WHERE userid = ?";
+    private String SQL_UPDATE = "UPDATE users SET name = ?, middlename = ?, surname = ? WHERE userid = ?";
+    private String SQL_DELETE = "DELETE FROM users WHERE userid = ?";
+    private String SQL_FIND_ALL = "SELECT * FROM users";
 //    private String SQL_FIND_ALL_BY_ID = "select * from Card WHERE Account_id = ?";
 
     private final JdbcTemplate jdbcTemplate;
@@ -26,18 +26,18 @@ public class UsersDao implements CrudDao<User, Long>{
 
     @Override
     public void create(User user) {
-        jdbcTemplate.update(SQL_CREATE, User.getName(), User.getMiddlename(), User.getSurname());
+        jdbcTemplate.update(SQL_CREATE, user.getName(), user.getMiddlename(), user.getSurname());
     }
 
     @Override
     public User read(Long id) {
-        return jdbcTemplate.query(SQL_READ, new BeanPropertyRowMapper<>(User.class))
+        return jdbcTemplate.query(SQL_READ, new Object[]{id}, new UserMapper())
                 .stream().findAny().orElse(null);
     }
 
     @Override
     public void update(Long id, User user) {
-        jdbcTemplate.update(SQL_UPDATE, User.getName(), User.getMiddlename(), User.getSurname(), id);
+        jdbcTemplate.update(SQL_UPDATE, user.getName(), user.getMiddlename(), user.getSurname(), id);
     }
 
     @Override
@@ -46,6 +46,7 @@ public class UsersDao implements CrudDao<User, Long>{
     }
 
     public List<User> getUsers() {
-        return jdbcTemplate.query(SQL_FIND_ALL, new BeanPropertyRowMapper<>(User.class));
+        return jdbcTemplate.query(SQL_FIND_ALL, new UserMapper());
     }
+
 }

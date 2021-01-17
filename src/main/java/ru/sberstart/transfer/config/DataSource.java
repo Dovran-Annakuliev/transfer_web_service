@@ -30,12 +30,10 @@
 //
 //    private DataSource() {}
 //
-//    @Bean
 //    public static HikariDataSource getDataSource() {
 //        return dataSource;
 //    }
 //
-//    @Bean
 //    public static Connection getConnection() throws SQLException {
 //        return dataSource.getConnection();
 //    }

@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Show</title>
+    <title>User</title>
 </head>
 <body>
-<p th:text="${user.getName() + ' ' + user.getMiddleName() + ' ' + user.getSurname}">VALUE</p>
-<p th:text="${'ID: ' + user.getId()}">VALUE</p>
+<p th:text="${user.getName() + ', ' + user.getMiddlename() + ', ' + user.getSurname()}">VALUE</p>
+<p th:text="${user.getId()}">VALUE</p>
 
-<a th:href="@{/people/{id}/edit(id=${user.getId()})}">Edit</a>
+<a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
 
 <form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
     <input type="submit" value="Delete"/>

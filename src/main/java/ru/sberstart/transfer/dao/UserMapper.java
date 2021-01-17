@@ -11,10 +11,10 @@ public class UserMapper implements RowMapper<User> {
     public User mapRow(ResultSet resultSet, int i) throws SQLException {
         User user = new User();
 
-        user.setId(resultSet.getLong("User_Id"));
-        User.setName(resultSet.getString("Name"));
-        User.setMiddlename(resultSet.getString("Middle_Name"));
-        User.setSurname(resultSet.getString("Sure_Name"));
+        user.setId(resultSet.getLong("userid"));
+        user.setName(resultSet.getString("name"));
+        user.setMiddlename(resultSet.getString("middlename"));
+        user.setSurname(resultSet.getString("surname"));
 
         return user;
     }

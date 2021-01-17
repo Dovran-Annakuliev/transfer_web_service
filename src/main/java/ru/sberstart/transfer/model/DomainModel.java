@@ -3,9 +3,9 @@ package ru.sberstart.transfer.model;
 import java.io.Serializable;
 
 public class DomainModel implements Serializable {
-    private static Long id;
+    private Long id;
 
-    public static Long getId() {
+    public Long getId() {
         return id;
     }
 
