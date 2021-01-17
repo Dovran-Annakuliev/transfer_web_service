@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New card</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/cards}" th:object="${card}">
+    <label for="userIdl">Enter id: </label>
+    <input type="text" th:field="*{userIdl}" id="userIdl"/>
+    <div style="color:red" th:if="${#fields.hasErrors('userIdl')}" th:errors="*{userIdl}">UserIdl Error</div>
+
+    <br/>
+
+    <label for="balance">Enter amount : </label>
+    <input type="text" th:field="*{balance}" id="balance"/>
+    <div style="color:red" th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}">Amount Error</div>
+
+    <br/>
+
+    <input type="submit" value="Create"/>
+</form>
+
+</body>
+</html>

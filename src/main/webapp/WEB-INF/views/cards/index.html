@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cards</title>
+</head>
+<body>
+
+<div th:each="card : ${cards}">
+    <a th:href="@{/cards/{id}(id=${card.getId()})}"
+       th:text="${card.getCardNumber() + ', ' + card.getBalance()}">card</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/cards/new">Create new card</a>
+
+</body>
+</html>

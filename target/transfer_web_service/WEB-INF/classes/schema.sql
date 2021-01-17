@@ -15,7 +15,7 @@ CREATE TABLE cards
 (
     cardid     bigserial NOT NULL,
     userid     bigint NOT NULL,
-    cardnumber varchar(50) NOT NULL,
+    cardnumber bigserial NOT NULL,
     balance     real NOT NULL,
     CONSTRAINT PK_cards PRIMARY KEY ( cardid, userid ),
     CONSTRAINT FK_11 FOREIGN KEY ( userid ) REFERENCES users ( userid )

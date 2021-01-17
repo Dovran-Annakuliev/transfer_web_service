@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Card</title>
+</head>
+<body>
+<p th:text="${card.getCardNumber() + ', ' + card.getBalance()}">VALUE</p>
+<p th:text="${card.getId()}">VALUE</p>
+
+<a th:href="@{/cards/{id}/edit(id=${card.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/cards/{id}(id=${card.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>
