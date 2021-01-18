@@ -8,7 +8,7 @@
 
 <div th:each="card : ${cards}">
     <a th:href="@{/cards/{id}(id=${card.getId()})}"
-       th:text="${card.getCardNumber() + ', ' + card.getBalance()}">card</a>
+       th:text="${'CardNumber: ' + card.getCardNumber() + ', Balance: ' + card.getBalance()}">card</a>
 </div>
 
 <br/>

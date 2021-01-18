@@ -5,8 +5,10 @@
     <title>User</title>
 </head>
 <body>
-<p th:text="${user.getName() + ', ' + user.getMiddlename() + ', ' + user.getSurname()}">VALUE</p>
-<p th:text="${user.getId()}">VALUE</p>
+<p th:text="${'Id: ' + user.getId()}">VALUE</p>
+<p th:text="${'Name: ' + user.getName()}">VALUE</p>
+<p th:text="${'Middle name: ' + user.getMiddlename()}">VALUE</p>
+<p th:text="${'Surname: ' + user.getSurname()}">VALUE</p>
 
 <a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
 

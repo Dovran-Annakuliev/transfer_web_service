@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historys</title>
+</head>
+<body>
+
+<div th:each="history : ${historys}">
+    <a th:href="@{/historys/{id}(id=${history.getId()})}"
+       th:text="${history.getId() + ', ' + history.getBalance()}">history</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/historys/new">Create new history</a>
+
+</body>
+</html>

@@ -26,9 +26,9 @@ CREATE INDEX fkIdx_12 ON cards
     userid
 );
 
-DROP TABLE IF EXISTS history;
+DROP TABLE IF EXISTS historys;
 
-CREATE TABLE history
+CREATE TABLE historys
 (
     historyid     bigserial NOT NULL,
     cardid        bigint NOT NULL,
@@ -36,13 +36,12 @@ CREATE TABLE history
     senderid      bigint NOT NULL,
     recipientid   bigint NOT NULL,
     balance        real NOT NULL,
-    operationtype varchar(50) NOT NULL,
     "date"           date NOT NULL,
     CONSTRAINT PK_history PRIMARY KEY ( historyid, cardid, userid ),
     CONSTRAINT FK_19 FOREIGN KEY ( cardid, userid ) REFERENCES cards ( cardid, userid )
 );
 
-CREATE INDEX fkIdx_20 ON history
+CREATE INDEX fkIdx_20 ON historys
 (
     cardid,
     userid

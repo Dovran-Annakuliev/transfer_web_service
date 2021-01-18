@@ -7,32 +7,29 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.sberstart.transfer.model.Card;
-import ru.sberstart.transfer.service.CardService;
-import ru.sberstart.transfer.service.UsersService;
+import ru.sberstart.transfer.service.CardsService;
 
 import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/cards")
 public class CardController {
-    private final CardService cardService;
-    private final UsersService usersService;
+    private final CardsService cardsService;
 
     @Autowired
-    public CardController(CardService cardService, UsersService usersService) {
-        this.cardService = cardService;
-        this.usersService = usersService;
+    public CardController(CardsService cardsService) {
+        this.cardsService = cardsService;
     }
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute("cards", cardService.getCards());
+        model.addAttribute("cards", cardsService.getCards());
         return "cards/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("card", cardService.getCard(id));
+        model.addAttribute("card", cardsService.getCard(id));
         return "cards/show";
     }
 
@@ -46,15 +43,13 @@ public class CardController {
         if (bindingResult.hasErrors())
             return "cards/new";
 
-        System.out.println(card.toString());
-
-        cardService.createUCard(card);
+        cardsService.createCard(card);
         return "redirect:/cards";
     }
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("card", cardService.getCard(id));
+        model.addAttribute("card", cardsService.getCard(id));
         return "/cards/edit";
     }
 
@@ -64,13 +59,13 @@ public class CardController {
         if (bindingResult.hasErrors())
             return "/cards/edit";
 
-        cardService.updateCard(id, card);
+        cardsService.updateCard(id, card);
         return "redirect:/cards";
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") Long id) {
-        cardService.deleteCard(id);
+        cardsService.deleteCard(id);
         return "redirect:/cards";
     }
 }

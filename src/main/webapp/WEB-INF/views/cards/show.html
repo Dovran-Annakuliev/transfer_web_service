@@ -5,8 +5,9 @@
     <title>Card</title>
 </head>
 <body>
-<p th:text="${card.getCardNumber() + ', ' + card.getBalance()}">VALUE</p>
-<p th:text="${card.getId()}">VALUE</p>
+<p th:text="${'Id: ' + card.getId()}">VALUE</p>
+<p th:text="${'CardNumber: ' + card.getCardNumber()}">VALUE</p>
+<p th:text="${'Balance: ' + card.getBalance()}">VALUE</p>
 
 <a th:href="@{/cards/{id}/edit(id=${card.getId()})}">Edit</a>
 

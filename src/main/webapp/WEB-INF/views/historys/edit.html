@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update history</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/historys/{id}(id=${history.getId()})}" th:object="${history}">
+    <label for="cardId">Enter card id: </label>
+    <input type="text" th:field="*{cardId}" id="cardId"/>
+    <div style="color:red" th:if="${#fields.hasErrors('cardId')}" th:errors="*{cardId}">CardId Error</div>
+
+    <br/>
+
+    <label for="userId">Enter user id: </label>
+    <input type="text" th:field="*{userId}" id="userId"/>
+    <div style="color:red" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">UserId Error</div>
+
+    <br/>
+
+    <label for="senderId">Enter sender id: </label>
+    <input type="text" th:field="*{senderId}" id="senderId"/>
+    <div style="color:red" th:if="${#fields.hasErrors('senderId')}" th:errors="*{senderId}">SenderId Error</div>
+
+    <br/>
+
+    <label for="recipientId">Enter recipient id: </label>
+    <input type="text" th:field="*{recipientId}" id="recipientId"/>
+    <div style="color:red" th:if="${#fields.hasErrors('recipientId')}" th:errors="*{recipientId}">RecipientId Error</div>
+
+    <br/>
+
+    <label for="balance">Enter amount: </label>
+    <input type="text" th:field="*{balance}" id="balance"/>
+    <div style="color:red" th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}">Amount Error</div>
+
+    <br/>
+
+    <input type="submit" value="Refill"/>
+</form>
+
+</body>
+</html>

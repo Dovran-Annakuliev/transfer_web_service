@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/transfer}" th:object="${history}">
+    <label for="senderid">Enter sender id: </label>
+    <input type="text" th:field="*{userIdl}" id="userIdl"/>
+    <div style="color:red" th:if="${#fields.hasErrors('userIdl')}" th:errors="*{userIdl}">UserIdl Error</div>
+
+    <br/>
+
+    <label for="middlename">Enter middlename: </label>
+    <input type="text" th:field="*{middlename}" id="middlename"/>
+    <div style="color:#ff0000" th:if="${#fields.hasErrors('middlename')}" th:errors="*{middlename}">Middlename Error</div>
+
+    <br/>
+
+    <label for="surname">Enter surname: </label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</div>
+
+    <br/>
+
+    <input type="submit" value="Transfer"/>
+</form>
+</body>
+</html>

@@ -8,15 +8,15 @@ import ru.sberstart.transfer.model.Card;
 import java.util.List;
 
 @Service
-public class CardService {
+public class CardsService {
     private final CardDao cardDao;
 
     @Autowired
-    public CardService(CardDao cardDao) {
+    public CardsService(CardDao cardDao) {
         this.cardDao = cardDao;
     }
 
-    public void createUCard(Card card) {
+    public void createCard(Card card) {
         cardDao.create(card);
     }
 
