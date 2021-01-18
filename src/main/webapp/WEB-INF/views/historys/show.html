@@ -5,8 +5,11 @@
     <title>History</title>
 </head>
 <body>
-<p th:text="${history.getSenderId() + ', ' + history.getBalance()}">VALUE</p>
-<p th:text="${history.getId()}">VALUE</p>
+<p th:text="${'Id: ' + history.getId()}">VALUE</p>
+<p th:text="${'Sender: ' + history.getSenderId()}">VALUE</p>
+<p th:text="${'Recipient: ' + history.getRecipientId()}">VALUE</p>
+<p th:text="${'Balance: ' + history.getBalance()}">VALUE</p>
+
 
 <a th:href="@{/historys/{id}/edit(id=${history.getId()})}">Edit</a>
 

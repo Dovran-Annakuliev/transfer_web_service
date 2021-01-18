@@ -2,37 +2,37 @@ package ru.sberstart.transfer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.sberstart.transfer.dao.UsersDao;
+import ru.sberstart.transfer.dao.implement.UsersDaoImpl;
 import ru.sberstart.transfer.model.User;
 
 import java.util.List;
 
 @Service
 public class UsersService {
-    private final UsersDao usersDao;
+    private final UsersDaoImpl usersDaoImpl;
 
     @Autowired
-    public UsersService(UsersDao usersDao) {
-        this.usersDao = usersDao;
+    public UsersService(UsersDaoImpl usersDaoImpl) {
+        this.usersDaoImpl = usersDaoImpl;
     }
 
     public void createUser(User user) {
-        usersDao.create(user);
+        usersDaoImpl.create(user);
     }
 
     public User getUser(Long id){
-        return usersDao.read(id);
+        return usersDaoImpl.read(id);
     }
 
     public void updateUser(Long id, User user) {
-        usersDao.update(id, user);
+        usersDaoImpl.update(id, user);
     }
 
     public void deleteUser(Long id) {
-        usersDao.delete(id);
+        usersDaoImpl.delete(id);
     }
 
     public List<User> getUsers(){
-        return usersDao.getUsers();
+        return usersDaoImpl.getUsers();
     }
 }

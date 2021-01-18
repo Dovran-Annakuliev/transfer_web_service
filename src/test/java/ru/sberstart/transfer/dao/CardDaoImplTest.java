@@ -4,12 +4,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import ru.sberstart.transfer.dao.implement.CardDaoImpl;
 
 
 @Transactional
-class CardDaoTest extends AbstractTransactionalJUnit4SpringContextTests{
+class CardDaoImplTest extends Abstract{
     @Autowired
-    private CardDao cardDao;
+    private CardDaoImpl cardDaoImpl;
 
     @BeforeEach
     void setUp() {

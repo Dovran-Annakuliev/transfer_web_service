@@ -1,4 +1,4 @@
-package ru.sberstart.transfer.dao;
+package ru.sberstart.transfer.dao.mapper;
 
 import org.springframework.jdbc.core.RowMapper;
 import ru.sberstart.transfer.model.User;

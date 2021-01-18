@@ -8,7 +8,7 @@
 
 <div th:each="history : ${historys}">
     <a th:href="@{/historys/{id}(id=${history.getId()})}"
-       th:text="${history.getId() + ', ' + history.getBalance()}">history</a>
+       th:text="${'Id: ' +history.getId() + ', send:' + history.getSenderId() + ', recp:' + history.getRecipientId() + ', balance:' + history.getBalance()}">history</a>
 </div>
 
 <br/>

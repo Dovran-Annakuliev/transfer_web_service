@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UsersDaoTest {
+class HistoryDaoImplTest {
 
     @Test
     void create() {
@@ -23,6 +23,6 @@ class UsersDaoTest {
     }
 
     @Test
-    void getUsers() {
+    void getHistorys() {
     }
 }

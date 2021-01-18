@@ -1,15 +1,16 @@
-package ru.sberstart.transfer.dao;
+package ru.sberstart.transfer.dao.implement;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import ru.sberstart.transfer.dao.UserDao;
+import ru.sberstart.transfer.dao.mapper.UserMapper;
 import ru.sberstart.transfer.model.User;
 
 import java.util.List;
 
 @Service
-public class UsersDao implements CrudDao<User, Long>{
+public class UsersDaoImpl implements UserDao {
     private String SQL_CREATE = "INSERT INTO users (name, middlename, surname) VALUES (?, ?, ?)";
     private String SQL_READ = "SELECT * FROM users WHERE userid = ?";
     private String SQL_UPDATE = "UPDATE users SET name = ?, middlename = ?, surname = ? WHERE userid = ?";
@@ -20,7 +21,7 @@ public class UsersDao implements CrudDao<User, Long>{
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public UsersDao(JdbcTemplate jdbcTemplate) {
+    public UsersDaoImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

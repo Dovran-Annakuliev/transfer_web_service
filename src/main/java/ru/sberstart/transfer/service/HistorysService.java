@@ -2,8 +2,8 @@ package ru.sberstart.transfer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.sberstart.transfer.dao.CardDao;
-import ru.sberstart.transfer.dao.HistoryDao;
+import ru.sberstart.transfer.dao.implement.CardDaoImpl;
+import ru.sberstart.transfer.dao.implement.HistoryDaoImpl;
 import ru.sberstart.transfer.model.Card;
 import ru.sberstart.transfer.model.History;
 
@@ -12,43 +12,43 @@ import java.util.List;
 
 @Service
 public class HistorysService {
-    private final HistoryDao historyDao;
-    private final CardDao cardDao;
+    private final HistoryDaoImpl historyDaoImpl;
+    private final CardDaoImpl cardDaoImpl;
 
     @Autowired
-    public HistorysService(HistoryDao historyDao, CardDao cardDao) {
-        this.historyDao = historyDao;
-        this.cardDao = cardDao;
+    public HistorysService(HistoryDaoImpl historyDaoImpl, CardDaoImpl cardDaoImpl) {
+        this.historyDaoImpl = historyDaoImpl;
+        this.cardDaoImpl = cardDaoImpl;
     }
 
     public void createHistory(History history) {
-        Card senderCard = cardDao.read(history.getSenderId());
-        Card recipientCard = cardDao.read(history.getRecipientId());
+        Card senderCard = cardDaoImpl.read(history.getSenderId());
+        Card recipientCard = cardDaoImpl.read(history.getRecipientId());
 
         history.setCardId(senderCard.getId());
         history.setUserId(senderCard.getUserIdl());
 
-        cardDao.update(history.getSenderId(), new Card(senderCard.getBalance() - history.getBalance()));
-        cardDao.update(history.getRecipientId(), new Card(recipientCard.getBalance() + history.getBalance()));
+        cardDaoImpl.update(history.getSenderId(), new Card(senderCard.getBalance() - history.getBalance()));
+        cardDaoImpl.update(history.getRecipientId(), new Card(recipientCard.getBalance() + history.getBalance()));
 
         history.setDate(new Date());
 
-        historyDao.create(history);
+        historyDaoImpl.create(history);
     }
 
     public History getHistory(Long id){
-        return historyDao.read(id);
+        return historyDaoImpl.read(id);
     }
 
     public void updateHistory(Long id, History history) {
-        historyDao.update(id, history);
+        historyDaoImpl.update(id, history);
     }
 
     public void deleteHistory(Long id) {
-        historyDao.delete(id);
+        historyDaoImpl.delete(id);
     }
 
     public List<History> getHistorys(){
-        return historyDao.getHistorys();
+        return historyDaoImpl.getHistorys();
     }
 }
