@@ -19,9 +19,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -56,21 +56,19 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/historys" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.sberstart.transfer.config" />
       <recent name="ru.sberstart.transfer.service" />
       <recent name="ru.sberstart.transfer.dao" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="ru.sberstart.transfer.dao" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.sberstart.transfer.service" />
@@ -78,28 +76,18 @@
       <recent name="ru.sberstart.transfer.controller" />
       <recent name="ru.sberstart.transfer.config" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dovran\Documents\GitHub\transfer_web_service\src\test\resources" />
       <recent name="C:\Users\Dovran\Documents\GitHub\transfer_web_service\src\main\webapp\WEB-INF\views\historys" />
       <recent name="C:\Users\Dovran\Documents\GitHub\transfer_web_service\src\main\webapp\WEB-INF\views\cards" />
       <recent name="C:\Users\Dovran\Documents\GitHub\transfer_web_service\src\main\webapp\WEB-INF\views\users" />
       <recent name="C:\Users\Dovran\Documents\GitHub\transfer_web_service\src\main\java\ru\sberstart\transfer\model" />
-      <recent name="C:\Users\Dovran\Documents\GitHub\transfer_web_service\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.41" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.41" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -249,7 +237,8 @@
       <workItem from="1610890971931" duration="628000" />
       <workItem from="1610891648308" duration="599000" />
       <workItem from="1610893031417" duration="27348000" />
-      <workItem from="1610953481672" duration="2562000" />
+      <workItem from="1610953481672" duration="5848000" />
+      <workItem from="1610960350940" duration="1234000" />
     </task>
     <servers />
   </component>
@@ -341,18 +330,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="490" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610878962699" />
-    <state x="731" y="206" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1610937344832">
+    <state x="731" y="206" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1610957405255">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="731" y="206" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610937344832" />
+    <state x="731" y="206" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610957405255" />
     <state x="2219" y="0" width="844" height="1022" maximized="true" key="dock-window-1" timestamp="1610928997698">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2219" y="0" width="844" height="1022" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610928997698" />
-    <state x="668" y="237" width="583" height="566" key="find.popup" timestamp="1610936677897">
+    <state x="668" y="237" width="583" height="566" key="find.popup" timestamp="1610958334314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="237" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610936677897" />
+    <state x="668" y="237" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610958334314" />
     <state x="576" y="119" key="spring file set editor" timestamp="1610875627579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
