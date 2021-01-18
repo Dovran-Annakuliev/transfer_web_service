@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import ru.sberstart.transfer.model.Card;
-import ru.sberstart.transfer.model.User;
 
 import java.util.List;
 
